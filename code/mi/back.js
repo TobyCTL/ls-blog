@@ -18,7 +18,7 @@ var app = {
 			//购物车页面
 			this.cartFn();
 			//提交订单页面。
-			this.orderFn();
+			//this.orderFn();
 		} catch (e) {
 			// 还没加载出来
 		}
@@ -36,9 +36,9 @@ var app = {
 
 
 		//版本 128g
-		var levelDom = $(".J_step.pro-choose[data-index=0] ul>li").eq(0)[0];
+		var levelDom = $(".J_step.pro-choose[data-index=0] ul>li").eq(3)[0];
 		//颜色 白色
-		var colorDom = $(".J_step.pro-choose[data-index=1] ul>li").eq(0)[0];
+		var colorDom = $(".J_step.pro-choose[data-index=1] ul>li").eq(3)[0];
 		//保险。不选保险了。非必要项。碎屏险可以补买的。
 		// var safeDom = $(".J_service.pro-choose[data-index=0] ul>li").eq(1)[0];
 		//当这几个都加载出来的时候才执行点击加入。避免购物车页面出现多项商品。
@@ -70,7 +70,7 @@ var app = {
 	cartFn() {
 		//阻止弹窗,避免阻断流程
 		window.alert = function(){}
-		//购物车中有大于1件商品，删除
+		//购物车中有大于1件商品，删除, gt意识是greater than , gt(0)代表选择第0个之后所有的
 		$("#J_cartListBody .item-box:gt(0)").find(".J_delGoods").each(function(index, el) {
 			el.click();
 			//确认删除按钮
